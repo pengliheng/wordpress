@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+  wordpress:
+    image: wordpress
+    restart: always
+    ports: 
+      - 8081:80
+    environment:
+      WORDPRESS_DB_PASSWORD: example
+  
+  mysql:
+    image: mariadb
+    restart: always
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
