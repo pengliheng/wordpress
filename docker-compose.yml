@@ -4,6 +4,9 @@ services:
   wordpress:
     image: wordpress
     restart: always
+    restart: always
+    volumes:
+      - ./html:/var/www/html
     ports: 
       - 8081:80
     environment:
